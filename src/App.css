@@ -1,21 +1,56 @@
+Body {
+  font-family: 'Mouse Memoirs', sans-serif;
+  background-color: #009000;
+}
+
+ul {
+  list-style: none;
+}
 .Myheader {
   text-align: center;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid white;
+  font-size: 30px;
 }
 
 .ProfileDetailInformation{
   display: flex;
   margin: 10px;
-  /* justify-content: center;
-  text-align: center; */
+  font-size: 30px;
+
 }
 
 .ProfileDetailInformation .ProfileImage {
-  width: 20%;
+  width: 30%;
 }
 
-.ProfileDetailInformation .ProfileInformation {
-  width: 70%;
+.ProfileDetailInformation .ProfileInformation{
+  width: 40%;
+  justify-content: center;
+  text-align: center;
+  
+}
+.ProfileDetailInformation .Introduce{
+  width: 30%;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.ProfileDetailInformation .Introduce_title{
+  border: 3px solid whitesmoke;
+  border-radius: 50px;
+  padding:10px;
+}
+
+.ProfileDetailInformation .Introduce_content{
+  margin-top: 30px;
+
+
+
 }
 
 
+.ProfileDetailInformation .ProfileInformation li{
+  margin-bottom: 10px;
+
+}

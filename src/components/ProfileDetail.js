@@ -20,12 +20,10 @@ const ProfileDetail = () =>{
                 (it)=> parseInt(it.id)=== parseInt(id))
                 
                 if (targetUser){
-                    console.log('1번조건 실행됨',id)
-                    console.log(targetUser) 
                     setData(targetUser)
                 }
                 else {
-                    alert("없어")
+                    alert("User Not Found")
                     navigate('/', {replace:true})
                 };
     }
@@ -34,11 +32,12 @@ const ProfileDetail = () =>{
     // const mapUserData= userData.map((item,idx)=>{console.log(item.id)})
     return (
         <div className="ProfileDetail">
-            <MyHeader title={'Profile component'}/>
+            <MyHeader title='Player Profile'/>
         <div className="ProfileDetailInformation">
             <div className="ProfileImage">Image file to be uploaded</div>
 
             {/* TODO: 이미지 파일 업로드 로직 처리 + assets에 있는 이미지 파일 불러오기 서버와 어떻게 연동? */}
+
             <div className="ProfileInformation">
             {
             data&&    
@@ -46,13 +45,27 @@ const ProfileDetail = () =>{
                     <li>Name:{data.name}</li>
                     <li>Age:{data.age}</li>
                     <li>Position:{data.position}</li>
-                    <li>Height:{data.height}</li>
-                    <li>Weight:{data.weight}</li>
+                    <li>Height:{data.height}cm</li>
+                    <li>Weight:{data.weight}kg</li>
                     
                 </ul>
             }
              
             </div>
+            <div className="Introduce">
+                <div className="Introduce_title">What kind of player are you?</div>
+                <div className="Introduce_content">{data && data.introduce}</div>
+            </div>
+        </div>
+
+
+        <div className="History">
+            {/* <select onChange={}>
+                <option>History</option>
+                <option>Record</option>
+                <option>Injury</option>
+            </select> */}
+
         </div>
 
         </div>
