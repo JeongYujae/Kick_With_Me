@@ -1,0 +1,21 @@
+.Myheader {
+  text-align: center;
+  border-bottom: 3px solid black;
+}
+
+.ProfileDetailInformation{
+  display: flex;
+  margin: 10px;
+  /* justify-content: center;
+  text-align: center; */
+}
+
+.ProfileDetailInformation .ProfileImage {
+  width: 20%;
+}
+
+.ProfileDetailInformation .ProfileInformation {
+  width: 70%;
+}
+
+
