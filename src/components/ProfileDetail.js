@@ -2,9 +2,14 @@ import React, { useContext, useEffect, useState} from "react"
 import {useParams, useNavigate} from 'react-router-dom';
 import { PlayerStateContext } from "../App"
 import MyHeader from "./Header"
-
+import Record from "./Record";
+import History from "./History"
 
 const ProfileDetail = () =>{
+
+
+    const [content,setContent]= useState(true);
+
 
     const navigate=useNavigate()
 
@@ -58,16 +63,15 @@ const ProfileDetail = () =>{
             </div>
         </div>
 
-
-        <div className="History">
-            {/* <select onChange={}>
-                <option>History</option>
-                <option>Record</option>
-                <option>Injury</option>
-            </select> */}
-
-        </div>
-
+            <div>
+                <div className="History">
+                    <button onClick={()=>setContent(false)}>History</button>
+                    <button onClick={()=>setContent(true)}>Record</button>
+                </div>
+                <div>
+                    {content? <History/> : <Record/>}
+                </div>
+            </div>
         </div>
     )
 }
