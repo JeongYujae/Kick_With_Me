@@ -1,16 +1,48 @@
+body{
+  background-color: #5BB318;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nanum Pen Script';
+  /* 웹 브라우저의 페이지 100% 를 최소 높이로 설정 */
+  min-height: 100vh;
+  margin: 0px;
+}
+
+@media (min-width:650px) {
+  .App{
+    width: 640px;
+  }
+
+}
+
+@media (max-width:650px){
+  .App{
+    width: 90vw;
+  }
+} 
+
 Body {
   font-family: 'Mouse Memoirs', sans-serif;
   /* background-color: #009000; */
+  
 }
 
 ul {
   list-style: none;
 }
 .Myheader {
+  
   text-align: center;
-  border-bottom: 3px solid #009000;
+  border-bottom: 3px solid whitesmoke;
   font-size: 30px;
 }
+
+/* .ProfileDeatail{
+  border: 3px solid #009000;
+
+} */
 
 .ProfileDetailInformation{
   display: flex;
@@ -37,7 +69,7 @@ ul {
 }
 
 .ProfileDetailInformation .Introduce_title{
-  border: 3px solid #009000;
+  border: 3px solid whitesmoke;
   border-radius: 50px;
   padding:10px;
 }
@@ -53,4 +85,30 @@ ul {
 .ProfileDetailInformation .ProfileInformation li{
   margin-bottom: 10px;
 
+}
+
+.ProfileDetail button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #2B7A0B;
+  color:whitesmoke;
+  border: none;
+  padding: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+
+  
+}
+
+.HistoryBox {
+  border:3px solid whitesmoke;
+  width: 30%;
+  font-size: 20px;
+  text-align: center;
+  align-items: cen;
+}
+
+.HistoryBox li {
+  list-style: none;
 }

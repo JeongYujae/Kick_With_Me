@@ -65,8 +65,8 @@ const ProfileDetail = () =>{
 
             <div>
                 <div className="History">
-                    <button onClick={()=>setContent(false)}>History</button>
-                    <button onClick={()=>setContent(true)}>Record</button>
+                    <button onClick={()=>setContent(true)}>History</button>
+                    <button onClick={()=>setContent(false)}>Record</button>
                 </div>
                 <div>
                     {content? <History/> : <Record/>}
