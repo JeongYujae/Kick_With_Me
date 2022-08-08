@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PlayerStateContext } from "../App";
 
-const History = () =>{
+const History = ({content}) =>{
     const userData= useContext(PlayerStateContext)
     const {id} = useParams();
 
@@ -42,7 +42,7 @@ const History = () =>{
 
     return (
         <div className="HistoryBox">
-            {data && data.record.split('/').map((cont,index)=><li key={index}>{cont}</li>)}
+            {data && data.history.split('/').map((cont,index)=><li key={index}>{cont}</li>)}
             
             {/* Histroy components
             {data &&<button onClick={splitByYear(data.history)} /> } */}

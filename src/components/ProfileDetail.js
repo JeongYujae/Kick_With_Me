@@ -8,8 +8,7 @@ import History from "./History"
 const ProfileDetail = () =>{
 
 
-    const [content,setContent]= useState(true);
-
+    const [content,setContent]= useState();
 
     const navigate=useNavigate()
 
@@ -18,6 +17,9 @@ const ProfileDetail = () =>{
     const [data,setData]=useState();    
 
     const userData= useContext(PlayerStateContext)
+
+
+
 
     useEffect(()=>{
         if (userData.length >=1){
@@ -32,51 +34,57 @@ const ProfileDetail = () =>{
                     navigate('/', {replace:true})
                 };
     }
-    },[id,userData]);
+    },[id]);
+
 
     // const mapUserData= userData.map((item,idx)=>{console.log(item.id)})
     return (
         <div className="ProfileDetail">
             <MyHeader title='Player Profile'/>
-        <div className="ProfileDetailInformation">
-            <div className="ProfileImage">Image file to be uploaded</div>
+            <div className="ProfileDetailInformation">
+                <div className="ProfileImage">Image file to be uploaded</div>
 
-            {/* TODO: 이미지 파일 업로드 로직 처리 + assets에 있는 이미지 파일 불러오기 서버와 어떻게 연동? */}
+                {/* TODO: 이미지 파일 업로드 로직 처리 + assets에 있는 이미지 파일 불러오기 서버와 어떻게 연동? */}
+        
 
-            <div className="ProfileInformation">
-            {
-            data&&    
-            <ul>
-                    <li>Name:{data.name}</li>
-                    <li>Age:{data.age}</li>
-                    <li>Position:{data.position}</li>
-                    <li>Height:{data.height}cm</li>
-                    <li>Weight:{data.weight}kg</li>
-                    
-                </ul>
-            }
-             
-            </div>
-            <div className="Introduce">
-                <div className="Introduce_title">What kind of player are you?</div>
-                <div className="Introduce_content">{data && data.introduce}</div>
-            </div>
-        </div>
-
-            <div>
-                <div className="History">
-                    <button onClick={()=>setContent(true)}>History</button>
-                    <button onClick={()=>setContent(false)}>Record</button>
+                <div className="ProfileInformation">
+                {
+                data&&    
+                <ul>
+                        <li>Name:{data.name}</li>
+                        <li>Age:{data.age}</li>
+                        <li>Position:{data.position}</li>
+                        <li>Height:{data.height}cm</li>
+                        <li>Weight:{data.weight}kg</li>
+                        
+                    </ul>
+                }
+                
                 </div>
+
+                <div className="Introduce">
+                    <div className="Introduce_title">What kind of player are you?</div>
+                    <div className="Introduce_content">{data && data.introduce}</div>
+                </div>
+            </div>
+
+            <div className="HistoryRecord">
+                <div className="ButtonBox">
+
+                    <button onClick={()=>setContent(true)}>Record</button>
+                    <button onClick={()=>setContent(false)}>History</button>
+
+                </div>
+
                 <div>
-                    {content? <History/> : <Record/>}
+                    {content ? <History/>: <Record/> }
                 </div>
             </div>
         </div>
     )
 }
 
-// data.defaultProps = {
-//     userData: []
+// History.defaultProps = {
+//     History: []
 //   }
 export default ProfileDetail
