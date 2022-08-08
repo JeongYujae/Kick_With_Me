@@ -18,9 +18,6 @@ const ProfileDetail = () =>{
 
     const userData= useContext(PlayerStateContext)
 
-
-
-
     useEffect(()=>{
         if (userData.length >=1){
             const targetUser= userData.find(
@@ -70,14 +67,13 @@ const ProfileDetail = () =>{
 
             <div className="HistoryRecord">
                 <div className="ButtonBox">
-
-                    <button onClick={()=>setContent(true)}>Record</button>
                     <button onClick={()=>setContent(false)}>History</button>
+                    <button onClick={()=>setContent(true)}>Record</button>
 
                 </div>
 
-                <div>
-                    {content ? <History/>: <Record/> }
+                <div className="HistoryRecordContent">
+                    {content ? <Record/>: <History/> }
                 </div>
             </div>
         </div>

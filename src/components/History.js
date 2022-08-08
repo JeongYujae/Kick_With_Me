@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PlayerStateContext } from "../App";
 
-const History = ({content}) =>{
+const History = () =>{
     const userData= useContext(PlayerStateContext)
     const {id} = useParams();
 
