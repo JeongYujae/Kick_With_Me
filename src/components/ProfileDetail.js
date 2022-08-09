@@ -18,6 +18,7 @@ const ProfileDetail = () =>{
 
     const userData= useContext(PlayerStateContext)
 
+
     useEffect(()=>{
         if (userData.length >=1){
             const targetUser= userData.find(
@@ -40,7 +41,7 @@ const ProfileDetail = () =>{
             <MyHeader title='Player Profile'/>
             <div className="ProfileDetailInformation">
                 <div className="ProfileImage">Image file to be uploaded</div>
-
+                {/* <img src={process.env.PUBLIC_URL+`assets/profile_image_${id}.jpg`}/> */}
                 {/* TODO: 이미지 파일 업로드 로직 처리 + assets에 있는 이미지 파일 불러오기 서버와 어떻게 연동? */}
         
 
