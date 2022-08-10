@@ -1,17 +1,26 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { MatchStateContext } from "../App";
 
 
 export const Manage = ({match}) => {
+
+    const onClick= () => {
+        //TODO!! DB 구현해서 내 유저수를 DB에 추가하도록 구현 + User 수 가 초과하면 참여 불가 메세지까지 구현
+        alert('Succesfully Joined!')
+    }
    
     return (
-        <div>
-            <h1>{match.name}</h1>
-            <h2>시간:{match.time}</h2>
-            <ul>
-                <li>참여 인원:{match.player}</li>
-                <li>난이도:{match.level}</li>
-            </ul>
+        <div className="matchListContainer">
+            <section className="matchTitle">{match.name}</section>
+            <section className="matchTime">{match.time.slice(0,10)}<br/>{match.time.slice(11,match.length)}</section>
+            <div className="matchPlayerLevel">
+                <div>Player: {match.player}</div>
+                <div>Level: {match.level}</div>
+                <button onClick={onClick}>JOIN</button>
+
+            </div>
+
+            
 
         </div>
     )

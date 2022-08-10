@@ -4,7 +4,7 @@ import MatchList from "../components/MatchList"
 
 const JoinMatch = () => {
     return (
-        <div>
+        <div className="JoinMatch">
             <MyHeader/>
             JoinMatch
             <MatchList/>

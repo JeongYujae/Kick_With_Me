@@ -4,6 +4,7 @@ import './App.css';
 import Home from './/pages/Home'
 import React from 'react';
 import JoinMatch from './pages/JoinMatch';
+import Team from './pages/Team';
 
 // JSON파일, BE API 로부터 받을 예정
 const dummyUserList= [
@@ -23,22 +24,36 @@ const dummyMatchList= [
 ]
 
 
+const dummyTeamList= [
+  {'id':1,'name':'성보축구회','age':'20-50','location':'관악구','level':'2'},
+  {'id':2,'name':'스페인축구회','age':'20-30','location':'마드리드','level':'3'},
+  {'id':3,'name':'경희축구회','age':'20','location':'동대문구','level':'1'},
+
+]
+
+
+
 export const PlayerStateContext= React.createContext();
 export const MatchStateContext= React.createContext()
+export const TeamStateContext= React.createContext()
 function App() {
   return (
     <PlayerStateContext.Provider value={dummyUserList}>
       <MatchStateContext.Provider value={dummyMatchList}>
-    <BrowserRouter>
-    <div>
-      <Routes>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/match' element={<JoinMatch/>}></Route>
-        <Route path='/profile/:id' element={<Profile/>}></Route>
-      </Routes>
-    </div>
-    </BrowserRouter>
-    </MatchStateContext.Provider>
+      <TeamStateContext.Provider value={dummyTeamList}>
+
+        <BrowserRouter>
+        <div>
+          <Routes>
+            <Route path='/' element={<Home/>}></Route>
+            <Route path='/match' element={<JoinMatch/>}></Route>
+            <Route path='/team' element={<Team/>}></Route>
+            <Route path='/profile/:id' element={<Profile/>}></Route>
+          </Routes>
+        </div>
+        </BrowserRouter>
+      </TeamStateContext.Provider>
+      </MatchStateContext.Provider>
     </PlayerStateContext.Provider>
   )
 }
