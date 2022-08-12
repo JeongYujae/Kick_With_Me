@@ -11,7 +11,7 @@ export const Manage = ({match}) => {
    
     return (
         <div className="matchListContainer">
-            <section className="matchTitle">{match.name}</section>
+            <section className="matchTitle">GAME#{match.id}<br/>{match.name}</section>
             <section className="matchTime">{match.time.slice(0,10)}<br/>{match.time.slice(11,match.length)}</section>
             <div className="matchPlayerLevel">
                 <div>Player: {match.player}</div>
