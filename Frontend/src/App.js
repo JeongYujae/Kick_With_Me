@@ -1,10 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Profile from './/pages/Profile'
+import 'bootstrap/dist/css/bootstrap.css';
+
 import './App.css';
 import Home from './/pages/Home'
 import React from 'react';
 import JoinMatch from './pages/JoinMatch';
 import Team from './pages/Team';
+import Navbar from './components/NavBar';
+// import { MenuBar } from './components/MenuBar';
 
 // JSON파일, BE API 로부터 받을 예정
 const dummyUserList= [
@@ -51,6 +55,8 @@ function App() {
 
         <BrowserRouter>
         <div>
+          <Navbar/>
+          {/* <MenuBar/> */}
           <Routes>
             <Route path='/' element={<Home/>}></Route>
             <Route path='/match' element={<JoinMatch/>}></Route>

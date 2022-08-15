@@ -14,20 +14,25 @@ const Home = () =>{
             <section className="ProfileArea">
                  {/* TODO: Your profile을 누르면 login된 정보에 맞춰서 자기 유저의 정보를 보여줌(BE와 연동 후) */}
                 Your profile box
+                asdasdasd
+                asdasd
             </section>
-            <section>
+
+            <section className="TimeArea">
                 <CurrentTime/>
             </section>
+            
             </div>
 
             
             <div className="BottomPart">
             <section className="MatchArea">
-                <h2>KICK RIGHT AWAY!</h2>
+                <div>BE READY FOR THE MATCH</div>
             </section>
 
             <section className="TeamArea">
-                <h2>Join the TEAM!</h2>
+            <div>JOIN THE TEAM</div>
+
             </section>
             </div>
 
