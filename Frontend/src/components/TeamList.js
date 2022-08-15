@@ -1,15 +1,14 @@
 import React, { useContext } from "react"
+import { useNavigate } from "react-router-dom"
 import { TeamStateContext } from "../App"
 
 export const Manage = ({team}) => {
 
-    const onClick= () => {
-        //TODO!! DB 구현해서 내 유저수를 DB에 추가하도록 구현 + User 수 가 초과하면 참여 불가 메세지까지 구현
-        alert('Succesfully Joined!')
-    }
+    const navigate= useNavigate()
+
    
     return (
-        <div className="teamListContainer">
+        <div className="TeamListContainer" onClick={()=>navigate(`/${team.id}`)}>
             <div className="teamTitle">{team.name}</div>
             <div className="TeamInfo">
             <div>Age: {team.age}</div>
@@ -23,14 +22,13 @@ export const Manage = ({team}) => {
 
 
 const TeamList= () => {
-
+    
     const teamData= useContext(TeamStateContext)
-    console.log(teamData)
 
     return(
-        <div>
+        <div className="GridContainer">
         {teamData.map(team=> (
-        <Manage team={team} key={team.id} />
+        <Manage team={team} key={team.id}/>
         ))}
         </div>
     )

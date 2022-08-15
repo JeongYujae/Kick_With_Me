@@ -50,3 +50,6 @@ class UserViewSet(viewsets.ModelViewSet):
         objects = UserModel.objects.get(id=uuid)
         objects.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+def 

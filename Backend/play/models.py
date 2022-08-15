@@ -20,3 +20,16 @@ class UserModel(models.Model):
         verbose_name = "유저 정보"
         verbose_name_plural = "유저 정보"
         ordering = ["name", "age"]
+
+
+class Team(models.Model):
+
+    id = models.UUIDField(help_text="Unique key",
+                          primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(help_text="Team Name",
+                            max_length=255, blank=False, null=False)
+    age_range = models.CharField(
+        help_text='Team Age Range', max_length=20, blank=True)
+    location = models.CharField(
+        help_text='Team Locatiion', max_length=40, blank=False)
+    level = models.IntegerField(help_text='Team Level', blank=False)
