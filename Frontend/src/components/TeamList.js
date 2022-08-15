@@ -1,15 +1,12 @@
 import React, { useContext } from "react"
-import { useNavigate } from "react-router-dom"
 import { TeamStateContext } from "../App"
+import MyHeader from "./Header"
 
 export const Manage = ({team}) => {
-
-    const navigate= useNavigate()
-
    
     return (
-        <div className="TeamListContainer" onClick={()=>navigate(`/${team.id}`)}>
-            <div className="teamTitle">{team.name}</div>
+        <div className="TeamListContainer" onClick={()=>window.location.href=`team/${team.id}`}>
+            <div className="TeamTitle">{team.name}</div>
             <div className="TeamInfo">
             <div>Age: {team.age}</div>
             <div>Location: {team.location}</div>

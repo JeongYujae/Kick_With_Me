@@ -28,7 +28,6 @@ const Weather = () => {
       });
 
     return (
-        <div>
             <div className="WeatherBox">
                 <ReactWeather
                 isLoading={isLoading}
@@ -40,7 +39,6 @@ const Weather = () => {
                 className="WeatherWidget"  
                 />
             </div>
-        </div>
       );
     
 }

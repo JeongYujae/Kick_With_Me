@@ -5,8 +5,7 @@ import MatchList from "../components/MatchList"
 const JoinMatch = () => {
     return (
         <div className="JoinMatch">
-            <MyHeader/>
-            JoinMatch
+            <MyHeader title={'Match List'}/>
             <MatchList/>
         </div>
     )

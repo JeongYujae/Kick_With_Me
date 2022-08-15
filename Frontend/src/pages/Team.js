@@ -7,9 +7,8 @@ const Team = () => {
 
     return(
         <div>
-            <MyHeader/>
+            <MyHeader title={'Team List'}/>
             <TeamList/>
-            {/* id 해결하기 */}
             
         </div>
     )

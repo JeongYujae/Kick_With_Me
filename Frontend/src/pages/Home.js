@@ -1,27 +1,35 @@
 import React, { useEffect, useState } from "react"
+import CurrentTime from "../components/CurrentTime"
 import Weather from "../components/Weather"
 import JoinMatch from "./JoinMatch"
 const Home = () =>{
 
     return(
-        <div>
-            HOME PAGE
-            {/* 작은 위젯 만들어서 날씨 + 내정보 */}
-            <section>
-            <Weather/>
+        <div className="Home">
+            <div className="TopPart">
+            <section className="WeatherArea">
+                <Weather/>
             </section>
-            {/* TODO: Your profile을 누르면 login된 정보에 맞춰서 자기 유저의 정보를 보여줌(BE와 연동 후) */}
-            <section>
-                Your profile
+           
+            <section className="ProfileArea">
+                 {/* TODO: Your profile을 누르면 login된 정보에 맞춰서 자기 유저의 정보를 보여줌(BE와 연동 후) */}
+                Your profile box
             </section>
-        
             <section>
+                <CurrentTime/>
+            </section>
+            </div>
+
+            
+            <div className="BottomPart">
+            <section className="MatchArea">
                 <h2>KICK RIGHT AWAY!</h2>
             </section>
 
-            <section>
+            <section className="TeamArea">
                 <h2>Join the TEAM!</h2>
             </section>
+            </div>
 
         </div>
     )

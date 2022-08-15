@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { MatchStateContext } from "../App";
+import MyHeader from "./Header";
 
 
 export const Manage = ({match}) => {
