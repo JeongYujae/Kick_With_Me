@@ -26,7 +26,7 @@ import React from "react"
 const MyHeader = ({title}) =>{
     return(
             <div className="MainTitle">
-                <h1> {title} </h1>
+                {title}
             </div>
     )
 }

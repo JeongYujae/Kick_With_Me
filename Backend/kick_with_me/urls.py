@@ -4,5 +4,6 @@ from django.conf.urls import include
 from play.views import UserViewSet
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', include('play.urls'))
 ]

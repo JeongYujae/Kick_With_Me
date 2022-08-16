@@ -40,7 +40,7 @@ function Navbar () {
 
     return (
             <nav className="Navbar">
-                <h1 className="navbar-logo">나축사<i className="fab fa-react"></i></h1>
+                <h1 className="navbar-logo">KICK WITH ME<i className="fab fa-react"></i></h1>
                 <div className="menu-icon" onClick={handleClick}>
                     <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>

@@ -24,14 +24,16 @@ const Home = () =>{
             
             </div>
 
+
+
             
             <div className="BottomPart">
-            <section className="MatchArea">
+            <section className="MatchArea" onClick={()=>window.location.href='http://localhost:3000/match'}>
                 <div>BE READY FOR THE MATCH</div>
             </section>
 
-            <section className="TeamArea">
-            <div>JOIN THE TEAM</div>
+            <section className="TeamArea" onClick={()=>window.location.href='http://localhost:3000/team'}>
+                <div>JOIN THE TEAM</div>
 
             </section>
             </div>
