@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import UserModel, TeamModel
+from .models import TeamModel, MatchModel
 
-admin.site.register(UserModel)
+admin.site.register(MatchModel)
 admin.site.register(TeamModel)

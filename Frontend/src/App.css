@@ -11,7 +11,6 @@
 
   --primary: #3acbf7;
 
-  /* Border size */
 
 }
 
@@ -22,6 +21,9 @@ font-family: 'Nanum Pen Script';
 font-family: 'Mouse Memoirs', sans-serif;
 font-family: 'Bebas Neue', cursive; */
 
+ul {
+  list-style: none;
+}
 
 
 
@@ -52,11 +54,6 @@ body{
   }
 } 
 
-/* Body {
-  font-family: 'Mouse Memoirs', sans-serif;
-  
-} */
-
 
 .MainTitle{
   display: flex;
@@ -67,9 +64,7 @@ body{
 }
 
 
-ul {
-  list-style: none;
-}
+
 .Myheader {
   
   text-align: center;
@@ -170,9 +165,9 @@ ul {
 .matchListContainer .matchTitle {
  font-family: 'Dongle', sans-serif;
 
-  background-color: snow;
+  background-color: whitesmoke;;
   width: 50%;
-  border: 3px solid snow;
+  border: 3px solid whitesmoke;
   padding: 10px;
   border-radius: 5px;
   color: black;
@@ -235,7 +230,7 @@ ul {
 
 .TeamTitle{
   font-size: var(--font-large);
-  border-bottom: 3px solid snow;
+  border-bottom: 3px solid whitesmoke;
   padding:5px;
   margin-bottom: 5px;
 }
@@ -255,7 +250,7 @@ ul {
 }
 
 .WeatherBox {
-  border: 3px solid snow;
+  border: 3px solid whitesmoke;
   margin-right: 10px;
   margin: 10px;
   border-radius: 10px;
@@ -265,7 +260,7 @@ ul {
 }
 
 .ProfileArea {
-  border: 3px solid snow;
+  border: 3px solid whitesmoke;
   margin: 10px;
   border-radius: 10px;
   
@@ -274,7 +269,7 @@ ul {
 }
 
 .Time {
-  border: 3px solid snow;
+  border: 3px solid whitesmoke;
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
