@@ -8,6 +8,7 @@ import React from 'react';
 import JoinMatch from './pages/JoinMatch';
 import Team from './pages/Team';
 import Navbar from './components/NavBar';
+import SignUp from './pages/Signup';
 // import { MenuBar } from './components/MenuBar';
 
 // JSON파일, BE API 로부터 받을 예정
@@ -59,6 +60,7 @@ function App() {
           {/* <MenuBar/> */}
           <Routes>
             <Route path='/' element={<Home/>}></Route>
+            <Route path='/signup' element={<SignUp/>}></Route>
             <Route path='/match' element={<JoinMatch/>}></Route>
             <Route path='/team' element={<Team/>}></Route>
             <Route path='/profile/:id' element={<Profile/>}></Route>
