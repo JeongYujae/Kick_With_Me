@@ -12,10 +12,10 @@ const SignupForm = () => {
 
   const onFinish = values => {
     async function fn() {
-        const {username, password} = values;
+        const {username, password, age, position} = values;
         setFieldErrors({});
 
-        const data= {username, password};
+        const data= {username, password, age, position};
 
         try{
             const response= await axios.post("http://localhost:8000/accounts/signup/", data);
@@ -31,8 +31,8 @@ const SignupForm = () => {
       } catch (error) {
         if (error.response) {
           notification.open({
-            message: "회원가입 실패",
-            description: "아이디/암호를 확인해주세요.",
+            message: "Failed to Sign In",
+            description: "Please check your Id and Password",
             icon: <FrownOutlined style={{ color: "#ff3333" }} />
           });
 
@@ -41,9 +41,6 @@ const SignupForm = () => {
           setFieldErrors(
             Object.entries(fieldsErrorMessages).reduce(
               (acc, [fieldName, errors]) => {
-          console.log(errors)
-
-                // errors : ["m1", "m2"].join(" ") => "m1 "m2"
                 acc[fieldName] = {
                   validateStatus: "error",
                   help: errors.join(" ")
@@ -58,30 +55,6 @@ const SignupForm = () => {
     }
     fn();
   };
-  //       catch (error) {
-  //           if (error.response) {
-  //             notification.open({
-  //               message:"Failed to Sign In",
-  //               description:"Please check your Id and Password Again",
-  //               icon:<FrownOutlined style={{color:'#ff3333'}}/>
-  //             })
-  //               const {data: fieldsErrorMessages} = error.response;
-  //               console.log(fieldsErrorMessages)
-  //               setFieldErrors(
-  //                   Object.entries(fieldsErrorMessages).reduce((acc,[fieldName,errors])=> {
-  //                   acc[fieldName] ={
-  //                        validateStaus: "error",
-  //                        help: errors.join(" ")
-  //                    };
-  //                    return acc
-  //                }, {}))
-                
-  //           }
-  //       }
-  //   }
-  //   fn();
-  
-  // };
 
   return (
     <Form
@@ -109,13 +82,13 @@ const SignupForm = () => {
       >
         <Input />
       </Form.Item>
-      {/* <Form.Item
-        label="Position"
+      <Form.Item
+        label='Position EX) MF, CB, FW '
         name="position"
         rules={[
           {
             required: true,
-            message: 'Please use abbreviation. EX) MF, CB, FW ',
+            message: 'Please input your Position',
           },
           {
             min:2, message:""
@@ -125,7 +98,24 @@ const SignupForm = () => {
         {...fieldErrors.username}
       >
         <Input />
-      </Form.Item> */}
+      </Form.Item>
+      <Form.Item
+        label="Age"
+        name="age"
+        rules={[
+          {
+            required: true,
+            message: ''
+          },
+          {
+            min:2, message:""
+          }
+        ]}
+        hasFeedback
+        {...fieldErrors.username}
+      >
+        <Input />
+      </Form.Item>
 
       <Form.Item
         label="Password"
