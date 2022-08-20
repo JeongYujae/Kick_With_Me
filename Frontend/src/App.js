@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Profile from './/pages/Profile'
 import 'bootstrap/dist/css/bootstrap.css';
+import AppProvider from './store';
 
 import './App.css';
 import Home from './/pages/Home'
@@ -9,6 +10,7 @@ import JoinMatch from './pages/JoinMatch';
 import Team from './pages/Team';
 import Navbar from './components/NavBar';
 import SignUp from './pages/Signup';
+import Login from './pages/Login';
 // import { MenuBar } from './components/MenuBar';
 
 // JSON파일, BE API 로부터 받을 예정
@@ -53,6 +55,7 @@ function App() {
     <PlayerStateContext.Provider value={dummyUserList}>
       <MatchStateContext.Provider value={dummyMatchList}>
       <TeamStateContext.Provider value={dummyTeamList}>
+      <AppProvider>
 
         <BrowserRouter>
         <div>
@@ -61,12 +64,16 @@ function App() {
           <Routes>
             <Route path='/' element={<Home/>}></Route>
             <Route path='/signup' element={<SignUp/>}></Route>
+            <Route path='/login' element={<Login/>}></Route>
             <Route path='/match' element={<JoinMatch/>}></Route>
             <Route path='/team' element={<Team/>}></Route>
             <Route path='/profile/:id' element={<Profile/>}></Route>
           </Routes>
         </div>
+        
         </BrowserRouter>
+  </AppProvider>
+
       </TeamStateContext.Provider>
       </MatchStateContext.Provider>
     </PlayerStateContext.Provider>

@@ -2,27 +2,33 @@ import { Button, Checkbox, Form, Input, notification } from 'antd';
 import React, { useState } from 'react';
 import {SmileOutlined, FrownOutlined} from "@ant-design/icons"
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import useLocalStorage from '../utils/useLocalStorage';
+// import { useNavigate } from 'react-router-dom';
 
-const Signup= () => {
+export default function Login() {
 
-  const navigate= useNavigate()
-
-  const [fieldErrors, setFieldErrors] = useState({});
+    // 로컬스토리지에 token 값 저장하기 
+    const [jwtToken, setJwtToken]=useLocalStorage("jwtToken","");
+    
+  const [fieldErrors,setFieldErrors]= useState({})
 
   const onFinish = values => {
     async function fn() {
-        const {username, password, age, position} = values;
+        const {username, password} = values;
+
         setFieldErrors({});
 
-        const data= {username, password, age, position};
+        const data= {username, password};
 
         try{
-            const response= await axios.post("http://localhost:8000/accounts/signup/", data);
-        
+            const response= await axios.post("http://localhost:8000/accounts/token/", data);
+
+            const {data: {token: jwtToken}}=response;
+            
+            setJwtToken(jwtToken)
+
         notification.open({
-          message:"Succesfully Singed In",
-          description:"Moving to Login Page",
+          message:"Succesfully Loged In",
           icon:<SmileOutlined style={{color:'#108ee9'}}/>
         })
 
@@ -31,7 +37,7 @@ const Signup= () => {
       } catch (error) {
         if (error.response) {
           notification.open({
-            message: "Failed to Sign In",
+            message: "Failed to Log In",
             description: "Please check your Id and Password",
             icon: <FrownOutlined style={{ color: "#ff3333" }} />
           });
@@ -55,7 +61,6 @@ const Signup= () => {
     }
     fn();
   };
-
   return (
     <Form
       name="basic"
@@ -79,44 +84,12 @@ const Signup= () => {
         ]}
         hasFeedback
         {...fieldErrors.username}
+        {...fieldErrors.non_field_errors}
       >
         <Input />
       </Form.Item>
-      <Form.Item
-        label='Position EX) MF, CB, FW '
-        name="position"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your Position',
-          },
-          {
-            min:2, message:""
-          }
-        ]}
-        hasFeedback
-        {...fieldErrors.username}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        label="Age"
-        name="age"
-        rules={[
-          {
-            required: true,
-            message: ''
-          },
-          {
-            min:2, message:""
-          }
-        ]}
-        hasFeedback
-        {...fieldErrors.username}
-      >
-        <Input />
-      </Form.Item>
-
+    
+  
       <Form.Item
         label="Password"
         name="password"
@@ -125,7 +98,7 @@ const Signup= () => {
       >
         <Input.Password />
       </Form.Item>
-
+  
       <Form.Item
         name="remember"
         valuePropName="checked"
@@ -136,7 +109,7 @@ const Signup= () => {
       >
         <Checkbox>Remember me</Checkbox>
       </Form.Item>
-
+  
       <Form.Item
         wrapperCol={{
           offset: 8,
@@ -149,10 +122,7 @@ const Signup= () => {
       </Form.Item>
     </Form>
   );
-};
+}
 
-
-
-export default Signup;
 
 
