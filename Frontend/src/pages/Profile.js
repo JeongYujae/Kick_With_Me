@@ -1,16 +1,7 @@
-import ProfileDetail from '../components/ProfileDetail'
-import React from "react"
-import Record from '../components/Record'
-import History from '../components/History'
+import React from "react";
 
-const Profile = () =>{
-
-
-    return (
-        <div>
-            <ProfileDetail/>
-        </div>
-    )
+function Profile() {
+  return <div>accounts/profile</div>;
 }
 
-export default Profile
+export default Profile;

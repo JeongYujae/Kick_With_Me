@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Profile from './/pages/Profile'
+import PlayerDetail from './/pages/PlayerDetail'
 import 'bootstrap/dist/css/bootstrap.css';
 import AppProvider from './store';
 
@@ -11,7 +11,9 @@ import Team from './pages/Team';
 import Navbar from './components/NavBar';
 import SignUp from './pages/Signup';
 import Login from './pages/Login';
-// import { MenuBar } from './components/MenuBar';
+import Profile from './pages/Profile';
+
+import LoginRequiredRoute from './utils/LoginRequiredRouter';
 
 // JSON파일, BE API 로부터 받을 예정
 const dummyUserList= [
@@ -45,8 +47,6 @@ const dummyTeamList= [
 
 ]
 
-
-
 export const PlayerStateContext= React.createContext();
 export const MatchStateContext= React.createContext()
 export const TeamStateContext= React.createContext()
@@ -60,19 +60,21 @@ function App() {
         <BrowserRouter>
         <div>
           <Navbar/>
-          {/* <MenuBar/> */}
           <Routes>
             <Route path='/' element={<Home/>}></Route>
             <Route path='/signup' element={<SignUp/>}></Route>
             <Route path='/login' element={<Login/>}></Route>
             <Route path='/match' element={<JoinMatch/>}></Route>
             <Route path='/team' element={<Team/>}></Route>
-            <Route path='/profile/:id' element={<Profile/>}></Route>
+            <Route path='/player/:id' element={<PlayerDetail/>}></Route>
+            {/* <Route path='/protected' element={<RequireAuth><ProtectedPage/></RequireAuth>}/> */}
+
           </Routes>
+
         </div>
         
         </BrowserRouter>
-  </AppProvider>
+    </AppProvider>
 
       </TeamStateContext.Provider>
       </MatchStateContext.Provider>

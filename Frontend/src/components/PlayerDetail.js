@@ -5,7 +5,7 @@ import MyHeader from "./Header"
 import Record from "./Record";
 import History from "./History"
 
-const ProfileDetail = () =>{
+const PlayerDetail = () =>{
 
 
     const [content,setContent]= useState();
@@ -84,4 +84,4 @@ const ProfileDetail = () =>{
 // History.defaultProps = {
 //     History: []
 //   }
-export default ProfileDetail
+export default PlayerDetail

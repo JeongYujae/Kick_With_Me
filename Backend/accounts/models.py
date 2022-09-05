@@ -10,7 +10,7 @@ class User(AbstractUser):
         validators=[RegexValidator(r"^010-?[1-9]\d{3}-?\d{4}$")], max_length=13)
     avatar = models.ImageField(
         blank=True, upload_to="accounts/avatar/%Y/%m/%d", help_text="48px * 48px png or jpg needed")
-    age = models.IntegerField(null=True, blank=True)
+    age = models.IntegerField(null=True, blank=False)
     position = models.CharField(max_length=4, blank=False)
 
 

@@ -2408,6 +2408,14 @@
     "@webassemblyjs/ast" "1.11.1"
     "@xtuc/long" "4.2.2"
 
+"@xstate/react@^1.0.3":
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/@xstate/react/-/react-1.6.3.tgz#706f3beb7bc5879a78088985c8fd43b9dab7f725"
+  integrity sha512-NCUReRHPGvvCvj2yLZUTfR0qVp6+apc8G83oXSjN4rl89ZjyujiKrTff55bze/HrsvCsP/sUJASf2n0nzMF1KQ==
+  dependencies:
+    use-isomorphic-layout-effect "^1.0.0"
+    use-subscription "^1.3.0"
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
@@ -3663,7 +3671,7 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
-date-fns@2.x:
+date-fns@2.x, date-fns@^2.16.1:
   version "2.29.2"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.2.tgz#0d4b3d0f3dff0f920820a070920f0d9662c51931"
   integrity sha512-0VNbwmWJDS/G3ySwFSJA3ayhbURMTJLtwM2DTxf9CWondCnh6DTNlO9JgRSq6ibf4eD0lfMJNBxUdEAHHix+bA==
@@ -8287,6 +8295,15 @@ react-transition-group@^4.4.2:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
+react-use-auth@^2.1.0-14:
+  version "2.1.0-14"
+  resolved "https://registry.yarnpkg.com/react-use-auth/-/react-use-auth-2.1.0-14.tgz#dca796a48ba9df330e912338d41e515d35c5a3d6"
+  integrity sha512-52JnwPUmYjqDr1kQTH/cwcMDUEq8pqL386ayHDz8/i52AHBaTBoXt7yAmMcabnuNe2oMFGXhlA/FOTVTpOOXcw==
+  dependencies:
+    "@xstate/react" "^1.0.3"
+    date-fns "^2.16.1"
+    xstate "^4.13.0"
+
 react@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
@@ -9557,10 +9574,27 @@ url-parse-lax@^1.0.0:
   dependencies:
     prepend-http "^1.0.1"
 
+use-isomorphic-layout-effect@^1.0.0:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/use-isomorphic-layout-effect/-/use-isomorphic-layout-effect-1.1.2.tgz#497cefb13d863d687b08477d9e5a164ad8c1a6fb"
+  integrity sha512-49L8yCO3iGT/ZF9QttjwLF/ZD9Iwto5LnH5LmEdk/6cFmXddqi2ulF0edxTwjj+7mqvpVVGQWvbXZdn32wRSHA==
+
 use-reducer-with-side-effects@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/use-reducer-with-side-effects/-/use-reducer-with-side-effects-2.2.0.tgz#c314d5e76f1196799792af94fd1a20361697107d"
   integrity sha512-/5XGudjgG8c+HoqQlSa/kp6RzaO10wBLZj6pbgpl2abp9xX2KuHa7KDJLf7UshHuI0sCZRWEYve6NK7uGURGOg==
+
+use-subscription@^1.3.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/use-subscription/-/use-subscription-1.8.0.tgz#f118938c29d263c2bce12fc5585d3fe694d4dbce"
+  integrity sha512-LISuG0/TmmoDoCRmV5XAqYkd3UCBNM0ML3gGBndze65WITcsExCD3DTvXXTLyNcOC0heFQZzluW88bN/oC1DQQ==
+  dependencies:
+    use-sync-external-store "^1.2.0"
+
+use-sync-external-store@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
+  integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
@@ -10078,6 +10112,11 @@ xmlchars@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
   integrity sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==
+
+xstate@^4.13.0:
+  version "4.33.2"
+  resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.33.2.tgz#eb356f7c982fd1191603c7129c3cdc288d02909a"
+  integrity sha512-hIcoubJm6zuHyTPtE4tKp0Keb94Bs11ohQ1bBE3pwua5PuTDpAPut6gSTJeU/xI1akd1LsTrCvZTil6Kc4LqEA==
 
 xtend@^4.0.2:
   version "4.0.2"

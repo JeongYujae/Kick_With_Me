@@ -1,14 +1,17 @@
 import { Button, Checkbox, Form, Input, notification } from 'antd';
-import React, { useState } from 'react';
+import React, {useState } from 'react';
 import {SmileOutlined, FrownOutlined} from "@ant-design/icons"
 import axios from 'axios';
 import useLocalStorage from '../utils/useLocalStorage';
+import { setToken } from '../store';
+import { useAppContext } from '../store';
 // import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  const { dispatch } = useAppContext();
 
     // 로컬스토리지에 token 값 저장하기 
-    const [jwtToken, setJwtToken]=useLocalStorage("jwtToken","");
+    // const [jwtToken, setJwtToken]=useLocalStorage("jwtToken","");
     
   const [fieldErrors,setFieldErrors]= useState({})
 
@@ -25,7 +28,8 @@ export default function Login() {
 
             const {data: {token: jwtToken}}=response;
             
-            setJwtToken(jwtToken)
+            dispatch(setToken(jwtToken))
+            // setJwtToken(jwtToken)
 
         notification.open({
           message:"Succesfully Loged In",
